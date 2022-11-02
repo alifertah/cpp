@@ -6,18 +6,17 @@
 /*   By: alfertah <alfertah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:52:36 by alfertah          #+#    #+#             */
-/*   Updated: 2022/11/02 16:50:30 by alfertah         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:12:03 by alfertah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-Phonebook::Phonebook(){
-};
+Phonebook::Phonebook(){};
 void    Phonebook::add()
 {
     std::string str;
-    this->tab[max_idx].setIdx(max_idx+1);
+    this->tab[max_idx].setIdx(max_idx);
     
     std::cout << "FirstName : ";
     getline(std::cin, str);
