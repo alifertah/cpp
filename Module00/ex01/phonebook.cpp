@@ -6,7 +6,7 @@
 /*   By: alfertah <alfertah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:52:36 by alfertah          #+#    #+#             */
-/*   Updated: 2022/11/01 02:39:07 by alfertah         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:50:30 by alfertah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,27 @@ void    Phonebook::add()
 {
     std::string str;
     this->tab[max_idx].setIdx(max_idx+1);
-    std::cout << "Fullname : ";
+    
+    std::cout << "FirstName : ";
     getline(std::cin, str);
-    this->tab[max_idx].setFullname(str);
-    std::cout << "Phone : ";
+    this->tab[max_idx].setFirstName(str);
+    
+    std::cout << "LastName : ";
     getline(std::cin, str);
-    this->tab[max_idx].setPhone(str);
+    this->tab[max_idx].setLastName(str);
+    
+    std::cout << "Nickname : ";
+    getline(std::cin, str);
+    this->tab[max_idx].setNickName(str);
+    
+    std::cout << "Phone Num : ";
+    getline(std::cin, str);
+    this->tab[max_idx].setPhoneNumber(str);
+    
+    std::cout << "Darkest Secret : ";
+    getline(std::cin, str);
+    this->tab[max_idx].setDarkestSecret(str);
+    
     this->max_idx += 1;
     if(this->max_idx == 8)
         max_idx = 0;
@@ -31,25 +46,36 @@ void    Phonebook::add()
 
 void    Phonebook::show()
 {
-    if(max_idx == 0)
-        std::cout << "ther is no contact yet" << std::endl;
-    else
-        for(int i = 0; i < max_idx; i++)
-        {
-            std::cout << "Name :";
-            std::cout << this->tab[i].getFullname();
-            std::cout << "Phone:";
-            std::cout << this->tab[i].getPhone() << std::endl;
-        }
+    for(int i = 0; i < max_idx; i++)
+    {
+        std::cout << this->tab[i].getIdx() << "||";
+        
+        std::cout << "First Name:";
+        std::cout << this->tab[i].getFirstName() << "||";
+        
+        std::cout << "Last Name :";
+        std::cout << this->tab[i].getLastName() << "||";
+        
+        std::cout << "Nickname  :";
+        std::cout << this->tab[i].getNickName() << std::endl;
+    }
 }
 
 void    Phonebook::search()
 {
-    show();
-    int i;
-    std::cin >> i;
-    std::cout << this->tab[i].getFullname();
-    std::cout << this->tab[i].getPhone() << std::endl;
+    if(max_idx == 0)
+        std::cout << "ther is no contact yet" << std::endl;
+    else
+    {
+        show();
+        int i;
+        std::cin >> i;
+        std::cout << this->tab[i].getFirstName() << "|";
+        std::cout << this->tab[i].getLastName() << "|";
+        std::cout << this->tab[i].getNickName() << "|"; 
+        std::cout << this->tab[i].getPhoneNumber() << "|";
+        std::cout << this->tab[i].getDarkestSecret() << "|";
+    }
 }
 
 int main(void)

@@ -7,18 +7,30 @@
 class Contact{
     private:
         int idx;
-        std::string fullname;
-        std::string phone;
+        std::string firstName;
+        std::string lastName;
+        std::string nickName;
+        std::string phoneNumber;
+        std::string darkestSecret;
 
     public:
         int     getIdx();
         void    setIdx(int i);
 
-        std::string    getFullname();
-        void           setFullname(std::string name);
+        std::string    getFirstName();
+        void           setFirstName(std::string first);
 
-        std::string    getPhone();
-        void            setPhone(std::string phone);
+        std::string    getLastName();
+        void           setLastName(std::string last);
+
+        std::string    getNickName();
+        void           setNickName(std::string nick);
+
+        std::string    getPhoneNumber();
+        void           setPhoneNumber(std::string phone);
+
+        std::string    getDarkestSecret();
+        void           setDarkestSecret(std::string secret);
 };
 
 #endif
