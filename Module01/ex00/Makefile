@@ -1,4 +1,4 @@
-SRCS = Zombie.cpp main.cpp
+SRCS = Zombie.cpp main.cpp randomChump.cpp
 
 CC = g++
 NAME = Zombie

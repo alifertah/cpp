@@ -1,17 +1,8 @@
 #include "Zombie.hpp"
 
-int main()
+int main(void)
 {
-
-	Zombie *_zombie;
-	int count = 3;
-	
-	_zombie = newZombie(count, "monster");
-	for(int i=0; i<count; i++)
-	{
-		_zombie->announce();
-	}
-	delete[] _zombie;
-
+	std::string name1 = "name";
+	randomChump(name1);
 	return (0);
 }

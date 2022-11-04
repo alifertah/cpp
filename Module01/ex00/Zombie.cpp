@@ -2,35 +2,27 @@
 
 std::string Zombie::getName()
 {
-    return(this->name);
+	return(name);
 }
 
-void    Zombie::setName(std::string newName)
+void	Zombie::setName(std::string newName)
 {
-    this->name = newName;
+	name = newName;
 }
 
-Zombie::~Zombie()
+void Zombie::announce(void)
 {
-    std::cout << "[" << getName() << "] " << "die." << std::endl;
+	std::cout << "<" << getName() << "> " << "BraiiiiiiinnnzzzZ" << std::endl;
 }
 
-Zombie  *newZombie(int N, std::string name )
-{
-    if (N <= 0)
-		return (NULL);
-		
-	Zombie *zombie_horde = new Zombie[N];
 
-	for (int i=0; i<N; i++)
-	{
-		zombie_horde[i].setName(name);
-	}
-	return (zombie_horde);
+Zombie::Zombie(std::string name)
+{
+	setName(name);
 }
 
-void    Zombie::announce()
+
+Zombie::~Zombie(void)
 {
-    std::cout << getName() << " :";
-    std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << "[" << getName() << "] " << "die." << std::endl;
 }
