@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alfertah <alfertah@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 16:52:36 by alfertah          #+#    #+#             */
-/*   Updated: 2022/11/02 17:12:03 by alfertah         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "phonebook.hpp"
 
 Phonebook::Phonebook(){};
@@ -83,13 +71,11 @@ int main(void)
     Phonebook *p = new Phonebook();    
     while(std::getline(std::cin, action))
     {
-        if(action == "add")
+        if(action == "ADD")
             p->add();
-        if(action == "search")
-            {
+        if(action == "SEARCH")
             p->search();
-            }
-        if(action == "exit")
+        if(action == "EXIT")
             return 0;
     }
 }
